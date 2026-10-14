@@ -1,0 +1,399 @@
+/* ========================================
+   1. RESET DAN PENGATURAN DASAR
+   ======================================== */
+
+/* Menghapus jarak bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Warna dan font utama halaman */
+:root {
+    --pink: #f4a6c1;
+    --pink-muda: #fff0f5;
+    --ungu: #9b8bd4;
+    --ungu-tua: #7765b5;
+    --putih: #ffffff;
+    --teks: #4b4453;
+    --abu: #8b8492;
+    --border: #f0e5ed;
+}
+
+/* Tampilan seluruh halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5f8, #f5f0ff);
+    color: var(--teks);
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* ========================================
+   2. HEADER / BAGIAN JUDUL
+   ======================================== */
+
+body > header {
+    background: linear-gradient(135deg, #f7b6ce, #c9b8f5);
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 0 0 35px 35px;
+    box-shadow: 0 5px 20px rgba(155, 139, 212, 0.15);
+}
+
+body > header h1 {
+    max-width: 900px;
+    margin: auto;
+    color: #ffffff;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 2px 3px 5px rgba(100, 70, 120, 0.15);
+}
+
+/* ========================================
+   3. NAVIGASI / MENU
+   ======================================== */
+
+nav {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--putih);
+    color: var(--ungu-tua);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--ungu);
+    color: var(--putih);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(155, 139, 212, 0.25);
+}
+
+/* ========================================
+   4. KONTEN UTAMA
+   ======================================== */
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Setiap section menjadi kartu */
+section {
+    background-color: var(--putih);
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(100, 70, 120, 0.07);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Efek saat kartu disentuh mouse */
+section:hover {
+    box-shadow: 0 12px 30px rgba(100, 70, 120, 0.12);
+}
+
+/* ========================================
+   5. GAMBAR
+   ======================================== */
+
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(100, 70, 120, 0.12);
+}
+
+/* ========================================
+   6. JUDUL DAN TEKS
+   ======================================== */
+
+h2 {
+    color: var(--ungu-tua);
+    font-size: 27px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* Hiasan kecil di bawah judul */
+h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    margin-top: 8px;
+    background: linear-gradient(
+        to right,
+        var(--pink),
+        var(--ungu)
+    );
+    border-radius: 10px;
+}
+
+h3 {
+    color: #b36d98;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+/* ========================================
+   7. BAGIAN PROJECT
+   ======================================== */
+
+#project {
+    margin-top: 30px;
+}
+
+/* Setiap artikel project */
+article {
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #fff8fb;
+    border: 1px solid #f7e2ed;
+    border-left: 5px solid var(--pink);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    background-color: #f8f3ff;
+    border-left-color: var(--ungu);
+    transform: translateX(5px);
+}
+
+article:last-child {
+    border-bottom: 1px solid #f7e2ed;
+}
+
+/* ========================================
+   8. FORM / FORMULIR
+   ======================================== */
+
+form {
+    margin-top: 20px;
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--teks);
+    font-weight: 600;
+}
+
+/* Kotak input, pilihan, dan pesan */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #fffbfd;
+    border: 1px solid #e8dce8;
+    border-radius: 12px;
+    color: var(--teks);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Warna saat kolom dipilih */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--ungu);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(155, 139, 212, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ========================================
+   9. TOMBOL
+   ======================================== */
+
+button {
+    padding: 11px 22px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #f4a6c1, #c1a9ef);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(155, 139, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(155, 139, 212, 0.3);
+}
+
+/* Tombol reset */
+button[type="reset"] {
+    background: #e8e2ed;
+    color: #655c70;
+    box-shadow: none;
+}
+
+button[type="reset"]:hover {
+    background: #d9cfe3;
+}
+
+/* ========================================
+   10. ASIDE / INFORMASI TAMBAHAN
+   ======================================== */
+
+aside {
+    max-width: 860px;
+    margin: 30px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff0f6, #f1ebff);
+    border: 1px solid #f1dcec;
+    border-left: 5px solid var(--ungu);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(100, 70, 120, 0.06);
+}
+
+/* ========================================
+   11. FOOTER / BAGIAN BAWAH
+   ======================================== */
+
+footer {
+    padding: 25px 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--abu);
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-top: 1px solid var(--border);
+}
+
+/* ========================================
+   12. GARIS PEMISAH
+   ======================================== */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+}
+
+/* ========================================
+   13. TAMPILAN HP / RESPONSIVE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    body > header {
+        padding: 28px 15px;
+        border-radius: 0 0 25px 25px;
+    }
+
+    body > header h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    aside {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 18px;
+    }
+}
+
+/* ========================================
+   14. MENGURANGI ANIMASI JIKA DIPERLUKAN
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}

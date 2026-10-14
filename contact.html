@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me | Neng Isan Lopiani</title>
+
+ 
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+
+    <!-- NAVIGASI -->
+    <nav aria-label="Navigasi utama">
+         <ul>
+                    <li>
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Kontak</a>
+                    </li>
+                    <li>
+                        <a href="project.html">Project</a>
+                    </li>
+                    <li>
+                        <a href="resume.html">Resume</a>
+                    </li>
+                </ul>
+    </nav>
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- PEMBUKA -->
+        <section class="intro">
+            <span class="tag">Get in Touch</span>
+
+            <h2>Hubungi Saya</h2>
+
+            <p>
+                Senang bisa terhubung dengan kamu!
+                Jika ada pertanyaan, penawaran kerja sama, atau sekadar
+                ingin menyapa, silakan hubungi saya melalui informasi
+                kontak dan media sosial di bawah ini.
+            </p>
+        </section>
+
+        <!-- INFORMASI KONTAK -->
+        <section class="contact-card">
+
+            <h2 class="section-title">
+                <span class="title-icon" aria-hidden="true">✉</span>
+                Informasi Kontak
+            </h2>
+
+            <div class="contact-list">
+
+                <div class="contact-item">
+                    <span class="item-icon" aria-hidden="true">01</span>
+
+                    <div class="item-content">
+                        <h3>Nama Lengkap</h3>
+                        <p>Neng Isan Lopiani</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="item-icon" aria-hidden="true">@</span>
+
+                    <div class="item-content">
+                        <h3>Email</h3>
+                        <a href="mailto:2406179@itg.ac.id">
+                            2406179@itg.ac.id
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="item-icon" aria-hidden="true">☎</span>
+
+                    <div class="item-content">
+                        <h3>No. Telepon</h3>
+                        <a href="tel:083899814160">
+                            083899814160
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="item-icon" aria-hidden="true">⌖</span>
+
+                    <div class="item-content">
+                        <h3>Lokasi</h3>
+                        <p>Garut, Samarang</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MEDIA SOSIAL -->
+        <section class="contact-card">
+
+            <h2 class="section-title">
+                <span class="title-icon" aria-hidden="true">↗</span>
+                Media Sosial
+            </h2>
+
+            <div class="social-list">
+
+                <a
+                    class="social-link"
+                    href="https://instagram.com/nengisannnnnnnnnn_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kunjungi Instagram Neng Isan"
+                >
+                    <span class="social-icon" aria-hidden="true">IG</span>
+
+                    <span class="social-info">
+                        <h3>Instagram</h3>
+                        <p>@nengisannnnnnnnnn_</p>
+                    </span>
+
+                    <span class="social-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                    class="social-link"
+                    href="https://github.com/nengisannn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kunjungi GitHub Neng Isan"
+                >
+                    <span class="social-icon" aria-hidden="true">GH</span>
+
+                    <span class="social-info">
+                        <h3>GitHub</h3>
+                        <p>nengisannn</p>
+                    </span>
+
+                    <span class="social-arrow" aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- FORMULIR PESAN -->
+        <section class="contact-card">
+
+            <h2 class="section-title">
+                <span class="title-icon" aria-hidden="true">✎</span>
+                Kirim Pesan
+            </h2>
+
+            <p class="form-description">
+                Isi formulir berikut untuk menyiapkan pesan melalui
+                aplikasi email kamu.
+            </p>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+                    <label for="nama">Nama lengkap</label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama kamu"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="nama@email.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+
+                    <textarea
+                        id="pesan"
+                        name="pesan"
+                        placeholder="Tuliskan pesan kamu di sini..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="submit" class="submit-button">
+                        Kirim Pesan <span aria-hidden="true">→</span>
+                    </button>
+
+                    <button type="reset">
+                        Reset Formulir
+                    </button>
+
+                </div>
+
+                <p class="form-note">
+                    Catatan: tombol kirim akan membuka aplikasi email.
+                    Pesan belum terkirim sampai kamu menekan tombol
+                    Kirim di aplikasi email tersebut.
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            Dibuat dengan <span>♥</span> oleh Neng Isan Lopiani
+            &copy; 2026
+        </p>
+    </footer>
+
+    <!-- FUNGSI FORMULIR -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nama = document.getElementById("nama").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const pesan = document.getElementById("pesan").value.trim();
+
+            if (!nama || !email || !pesan) {
+                alert("Mohon lengkapi semua kolom terlebih dahulu.");
+                return;
+            }
+
+            const tujuanEmail = "2406179@itg.ac.id";
+
+            const subjek = encodeURIComponent(
+                "Pesan dari website - " + nama
+            );
+
+            const isiPesan = encodeURIComponent(
+                "Nama: " + nama +
+                "\nEmail pengirim: " + email +
+                "\n\nPesan:\n" + pesan
+            );
+
+            const linkEmail =
+                "mailto:" + tujuanEmail +
+                "?subject=" + subjek +
+                "&body=" + isiPesan;
+
+            window.location.href = linkEmail;
+        });
+    </script>
+
+</body>
+</html>
