@@ -1,10 +1,11 @@
-
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Tampilan halaman */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8fafc;
@@ -14,6 +15,7 @@ body {
     justify-content: center;
 }
 
+/* Kontainer aplikasi */
 .todo-app {
     background: #ffffff;
     width: 100%;
@@ -24,6 +26,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Judul */
 h2 {
     color: #1d4ed8;
     margin-bottom: 20px;
@@ -31,6 +34,20 @@ h2 {
     font-size: 22px;
 }
 
+/* Fitur 1: Penghitung jumlah tugas */
+.task-counter {
+    background-color: #eff6ff;
+    color: #1e40af;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 8px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Form input */
 .input-section {
     display: flex;
     gap: 10px;
@@ -56,6 +73,7 @@ input[type="text"].error {
     background-color: #fff5f5;
 }
 
+/* Tombol tambah */
 button.add-btn {
     background-color: #1d4ed8;
     color: white;
@@ -70,6 +88,7 @@ button.add-btn:hover {
     background-color: #1e40af;
 }
 
+/* Pesan kesalahan */
 .error-message {
     color: #dc3545;
     font-size: 12px;
@@ -77,11 +96,13 @@ button.add-btn:hover {
     display: none;
 }
 
+/* Daftar tugas */
 .todo-list {
     list-style: none;
     margin-top: 14px;
 }
 
+/* Item tugas */
 .todo-item {
     display: flex;
     align-items: center;
@@ -104,6 +125,7 @@ button.add-btn:hover {
     color: #64748b;
 }
 
+/* Teks tugas */
 .todo-text {
     font-size: 14px;
     flex: 1;
@@ -111,6 +133,7 @@ button.add-btn:hover {
     overflow-wrap: anywhere;
 }
 
+/* Tombol aksi */
 .todo-actions {
     display: flex;
     gap: 6px;
@@ -126,6 +149,7 @@ button.add-btn:hover {
     font-weight: bold;
 }
 
+/* Tombol selesai */
 .complete-btn {
     background-color: #16a34a;
     color: white;
@@ -135,6 +159,7 @@ button.add-btn:hover {
     background-color: #15803d;
 }
 
+/* Tombol hapus */
 .delete-btn {
     background-color: #dc2626;
     color: white;
@@ -142,4 +167,66 @@ button.add-btn:hover {
 
 .delete-btn:hover {
     background-color: #b91c1c;
+}
+
+/* Pesan ketika daftar kosong */
+.empty-message {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    padding: 10px;
+}
+
+/* Fitur 2: Tombol bersihkan tugas selesai */
+.clear-completed-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #475569;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clear-completed-btn:hover:not(:disabled) {
+    background-color: #334155;
+}
+
+/* Tombol nonaktif jika tidak ada tugas selesai */
+.clear-completed-btn:disabled {
+    background-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 400px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .todo-app {
+        padding: 16px;
+    }
+
+    .input-section {
+        gap: 6px;
+    }
+
+    button.add-btn {
+        padding: 10px 12px;
+    }
+
+    .todo-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .todo-actions {
+        margin-left: auto;
+    }
 }
