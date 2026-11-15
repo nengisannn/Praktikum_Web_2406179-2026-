@@ -1,80 +1,126 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRUD Mahasiswa - JavaScript & Laragon</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101a35">
+    <title>EduData — Manajemen Mahasiswa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<h2>Manajemen Data Mahasiswa</h2>
-<p class="subtitle">Sistem CRUD 100% JavaScript: Node.js, Express, Fetch API &
-MySQL Laragon</p>
-<!-- Pesan Notifikasi Alert -->
-<div id="alertMessage" class="alert" style="display:none;"></div>
-<!-- Formulir Tambah / Edit Mahasiswa -->
-<div class="form-card">
-<h3 id="formTitle">Tambah Mahasiswa Baru</h3>
-<form id="mhsForm">
-<input type="hidden" id="mhsId">
-<div class="form-row">
-<div class="form-group flex-1">
-<label for="nim">NIM <span class="req">*</span></label>
-<input type="text" id="nim" required placeholder="Contoh:
-240101003">
-</div>
-<div class="form-group flex-1">
-<label for="nama">Nama Lengkap <span
-class="req">*</span></label>
-<input type="text" id="nama" required placeholder="Nama
-mahasiswa">
-</div>
-</div>
-<div class="form-row">
-<div class="form-group flex-1">
-<label for="jurusan">Program Studi <span
-class="req">*</span></label>
-<select id="jurusan" required>
-<option value="">-- Pilih Jurusan --</option>
-<option value="Teknik Informatika">Teknik
-Informatika</option>
-<option value="Sistem Informasi">Sistem Informasi</option>
-<option value="Manajemen Informatika">Manajemen
-Informatika</option>
-</select>
-</div>
-<div class="form-group flex-1">
-<label for="email">Email <span class="req">*</span></label>
-<input type="email" id="email" required
-placeholder="nama@kampus.ac.id">
-</div>
-</div>
-<div class="form-actions">
-<button type="submit" id="btnSubmit" class="btn btn-primary">Simpan
-Mahasiswa</button>
-<button type="button" id="btnCancel" class="btn btn-secondary"
-style="display:none;">Batal Edit</button>
-</div>
-</form>
-</div>
-<!-- Tabel Data Mahasiswa [Indikator 6.3] -->
-<div class="table-card">
-<table>
-<thead>
-<tr>
-<th>No</th>
-<th>NIM</th>
-<th>Nama Lengkap</th>
-<th>Jurusan</th>
-<th>Email</th>
-<th>Aksi</th>
-</tr>
-</thead>
-<tbody id="mhsTableBody"></tbody>
-</table>
-</div>
-</div>
-<script src="script.js"></script>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="#">
+                <span class="brand-mark">E</span>
+                <span>Edu<span class="brand-light">Data</span><small>STUDENT MANAGEMENT</small></span>
+            </a>
+            <div class="side-label">MENU UTAMA</div>
+            <a class="nav-item active" href="#dashboard"><span class="nav-icon">▦</span> Dashboard</a>
+            <a class="nav-item" href="#data-mahasiswa"><span class="nav-icon">♙</span> Data Mahasiswa</a>
+            <div class="sidebar-bottom">
+                <div class="side-help-icon">✦</div>
+                <strong>Kelola data lebih mudah</strong>
+                <p>Satu tempat untuk mengatur informasi mahasiswa.</p>
+                <span class="version">MODUL 7 · FULL-STACK JAVASCRIPT</span>
+            </div>
+        </aside>
+
+        <main class="main-content" id="dashboard">
+            <header class="topbar">
+                <div>
+                    <div class="eyebrow">SISTEM INFORMASI AKADEMIK</div>
+                    <h1>Dashboard Mahasiswa</h1>
+                    <p class="welcome">Selamat datang! Kelola data mahasiswa dengan mudah.</p>
+                </div>
+                <div class="profile">
+                    <div class="profile-avatar">AD</div>
+                    <div><strong>Administrator</strong><small>Admin Sistem</small></div>
+                </div>
+            </header>
+
+            <section class="stats-grid" aria-label="Ringkasan data">
+                <article class="stat-card stat-primary">
+                    <div class="stat-top"><span>Total Mahasiswa</span><span class="stat-icon">♙</span></div>
+                    <div class="stat-number" id="totalMahasiswa">0</div>
+                    <div class="stat-caption">Mahasiswa terdaftar</div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Program Studi</span><span class="stat-icon purple">▤</span></div>
+                    <div class="stat-number" id="totalJurusan">0</div>
+                    <div class="stat-caption">Program studi tersedia</div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Status Sistem</span><span class="stat-icon green">✓</span></div>
+                    <div class="stat-number status-number" id="systemStatus">Online</div>
+                    <div class="stat-caption">Aplikasi siap digunakan</div>
+                </article>
+            </section>
+
+            <section class="form-card panel" id="form-section">
+                <div class="section-heading">
+                    <div class="heading-icon">＋</div>
+                    <div><h2 id="formTitle">Tambah Mahasiswa Baru</h2><p>Lengkapi informasi mahasiswa di bawah ini.</p></div>
+                </div>
+                <div id="alertMessage" class="alert" role="status" aria-live="polite" hidden></div>
+                <form id="mhsForm">
+                    <input type="hidden" id="mhsId">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nim">Nomor Induk Mahasiswa <span>*</span></label>
+                            <input type="text" id="nim" required maxlength="30" placeholder="Contoh: 240101003" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap <span>*</span></label>
+                            <input type="text" id="nama" required maxlength="100" placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="jurusan">Program Studi <span>*</span></label>
+                            <select id="jurusan" required>
+                                <option value="">Pilih program studi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Manajemen Informatika">Manajemen Informatika</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email <span>*</span></label>
+                            <input type="email" id="email" required maxlength="120" placeholder="nama@kampus.ac.id">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="btnSubmit" class="btn btn-primary"><span>＋</span> Simpan Mahasiswa</button>
+                        <button type="button" id="btnCancel" class="btn btn-ghost" hidden>Batal Edit</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="table-card panel" id="data-mahasiswa">
+                <div class="table-heading">
+                    <div><div class="eyebrow">DATABASE AKADEMIK</div><h2>Daftar Mahasiswa</h2><p>Kelola dan pantau seluruh data mahasiswa.</p></div>
+                    <div class="table-tools">
+                        <label class="search-box" for="searchInput"><span>⌕</span><input type="search" id="searchInput" placeholder="Cari NIM, nama, jurusan..." autocomplete="off"></label>
+                    </div>
+                </div>
+                <div class="table-meta">
+                    <div class="total-label">Total Mahasiswa Terdaftar: <strong id="totalLabel">0</strong> Orang</div>
+                    <span class="live-indicator"><i></i> Data terkini</span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>NO</th><th>NIM</th><th>NAMA MAHASISWA</th><th>PROGRAM STUDI</th><th>EMAIL</th><th class="action-heading">AKSI</th></tr></thead>
+                        <tbody id="mhsTableBody">
+                            <tr><td colspan="6" class="loading-cell">Memuat data mahasiswa...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer"><span id="resultInfo">Menampilkan 0 data</span><span>EduData <b>•</b> Modul 7</span></div>
+            </section>
+            <footer class="footer">© 2026 EduData Student Management <span>Dibuat untuk Praktikum Pemrograman Web</span></footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

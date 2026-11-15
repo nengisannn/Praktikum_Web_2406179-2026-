@@ -1,13 +1,19 @@
 {
-  "name": "crud-mhs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "edudata-crud-mahasiswa",
+  "version": "2.0.0",
+  "description": "Aplikasi CRUD mahasiswa dengan Node.js, Express, MySQL, dan JavaScript",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "crud",
+    "javascript",
+    "express",
+    "mysql",
+    "laragon"
+  ],
   "license": "ISC",
   "dependencies": {
     "express": "^5.3.0",
