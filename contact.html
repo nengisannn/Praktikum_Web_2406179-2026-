@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPortfolio | Kontak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span><span>MyPortfolio</span>
+    </a>
+    <button class="menu-toggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Beranda</a>
+      <a href="project.html">Project</a>
+      <a href="resume.html">Resume</a>
+      <a class="active" href="contact.html">Kontak</a>
+      <a class="nav-cta" href="dashboard.html">Dashboard Proyek ↗</a>
+    </nav>
+  </header>
+
+  <main class="page-main section-wrap">
+    <section class="page-intro">
+      <span class="eyebrow">KONTAK</span>
+      <h1>Mari mulai <span class="gradient-text">percakapan.</span></h1>
+      <p>Gunakan formulir ini untuk menyiapkan pesan melalui aplikasi email yang tersedia di perangkat.</p>
+    </section>
+
+    <div class="contact-layout">
+      <section class="contact-card panel-card">
+        <span class="eyebrow">KIRIM PESAN</span>
+        <h2>Ceritakan ide kamu.</h2>
+
+        <form id="contactForm" class="contact-form">
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" type="text" placeholder="Nama kamu" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="nama@email.com" required>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan di sini..." required></textarea>
+
+          <button class="button primary" type="submit">Siapkan Email ↗</button>
+          <p class="form-hint">Formulir ini menggunakan mailto dan tidak menyimpan pesan ke server.</p>
+        </form>
+      </section>
+
+      <aside class="contact-aside">
+        <div class="contact-orb">✦</div>
+        <span class="eyebrow">TERBUKA UNTUK DISKUSI</span>
+        <h2>Belajar lebih baik saat berbagi ide.</h2>
+        <p>
+          Silakan gunakan formulir di samping untuk membuat draft email.
+          Ganti alamat email tujuan pada file <code>site.js</code> sesuai alamat yang digunakan.
+        </p>
+
+        <div class="contact-detail">
+          <span>✉</span>
+          <div><b>Email tujuan</b><p>atur di file site.js</p></div>
+        </div>
+        <div class="contact-detail">
+          <span>⌘</span>
+          <div><b>Topik</b><p>Web, desain, dan kolaborasi</p></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 MyPortfolio</span>
+    <span>Dibuat untuk Praktikum Pemrograman Web</span>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
